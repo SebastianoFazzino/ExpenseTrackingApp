@@ -26,9 +26,4 @@ const expenseList = [
   }
 ];
 
-const addExpense = (newExpense) => {
-
-  return {...expenseList, newExpense}
-}
-
-export { expenseList, addExpense };
+export { expenseList };

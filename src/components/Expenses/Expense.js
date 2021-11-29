@@ -8,12 +8,12 @@ import "../components-styles/Expense.css";
 const Expense = (props) => {
 
     const expenses = props.items;
-
     const [year, setYear] = useState("2021");
-
     const handleFilterChange = (value) => {
         setYear(value);
     }
+
+    const filteredExpense = expenses.filter(expense => expense.date.getFullYear().toString() === year);
 
     return (
 
@@ -22,13 +22,14 @@ const Expense = (props) => {
                 initialSelect={year}
                 onChangeFilter={handleFilterChange}
             />
-            { props.items.map( item =>
-                <ExpenseItem
-                    key={item.id}
-                    title={item.title}
-                    amount={item.amount}
-                    date={item.date}
-                />
+            { filteredExpense.length === 0 ? <p>No Expenses Found!</p>
+                : filteredExpense.map(expense =>
+                    <ExpenseItem
+                       key={expense.id}
+                       title={expense.title}
+                       date={expense.date}
+                       amount={expense.amount}
+                    />
             )}
         </Card>
     );

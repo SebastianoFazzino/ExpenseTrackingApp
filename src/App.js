@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Expense from "./components/Expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
-import {expenseList} from "./components/Expenses/ExpenseList";
+import {expenseItems} from "./components/Expenses/ExpenseItems";
 
-const EXPENSES = expenseList;
+const EXPENSES = expenseItems;
 
 function App() {
 

@@ -1,29 +1,26 @@
+import ExpenseItem from "./ExpenseItem";
+import "../components-styles/ExpenseList.css";
 
-const expenseList = [
-  {
-    id: 1,
-    title: "Groceries",
-    amount: 25.60,
-    date: new Date(2021, 10, 12)
-  },
-  {
-    id: 2,
-    title: "Cinema",
-    amount: 9.99,
-    date: new Date(2021, 10, 17)
-  },
-  {
-    id: 3,
-    title: "Restaurant",
-    amount: 37.00,
-    date: new Date(2021, 11, 3)
-  },
-  {
-    id: 4,
-    title: "Insurance",
-    amount: 26.95,
-    date: new Date(2021, 11, 22)
-  }
-];
 
-export { expenseList };
+const ExpenseList = (props) => {
+
+    if (props.expenses.length === 0) {
+        return (
+            <h2 className={"expenses-list__fallback"}>No Expenses Found</h2>
+        );
+    }
+         return (
+             <ul className={"expenses-list"}>
+                 {props.expenses.map(expense => (
+                     <ExpenseItem
+                         key={expense.id}
+                         title={expense.title}
+                         date={expense.date}
+                         amount={expense.amount}
+                     />
+                 ))}
+             </ul>
+         );
+}
+
+export default ExpenseList;

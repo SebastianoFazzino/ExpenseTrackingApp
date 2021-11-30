@@ -19,14 +19,13 @@ const NewExpense = (props) => {
 
         <div className={"new-expense"}>
 
-        { !expand && <button onClick={handleExpand}>Add New Expense</button> }
-
-        { expand &&
-            <ExpenseForm
-                onSaveExpenseData={saveExpenseDataHandler}
-                buttonClicked={handleExpand}
-            />
-        }
+            { !expand
+                ? <button onClick={handleExpand}>Add New Expense</button>
+                : <ExpenseForm
+                    onSaveExpenseData={saveExpenseDataHandler}
+                    buttonClicked={handleExpand}
+                />
+            }
         </div>
     )
 };

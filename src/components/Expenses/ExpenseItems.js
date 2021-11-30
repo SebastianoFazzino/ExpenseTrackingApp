@@ -4,7 +4,7 @@ const expenseItems = [
     id: 1,
     title: "Groceries",
     amount: 25.60,
-    date: new Date(2021, 10, 12)
+    date: new Date(2021, 8, 12)
   },
   {
     id: 2,
@@ -22,7 +22,13 @@ const expenseItems = [
     id: 4,
     title: "Insurance",
     amount: 26.95,
-    date: new Date(2021, 11, 22)
+    date: new Date(2021, 6, 22)
+  },
+  {
+    id: 5,
+    title: "Insurance",
+    amount: 26.95,
+    date: new Date(2020, 7, 29)
   }
 ];
 
